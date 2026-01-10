@@ -1,0 +1,71 @@
+{
+    "$schema": "https://unpkg.com/release-it@19/schema/release-it.json",
+    "git": {
+        "commitMessage": "release: v${version}",
+        "tagName": "v${version}",
+        "tagAnnotation": "Release v${version}",
+        "requireCleanWorkingDir": true,
+        "requireUpstream": true,
+        "push": true,
+        "addUntrackedFiles": true
+    },
+    "github": {
+        "release": true,
+        "releaseName": "v${version}",
+        "autoGenerate": false
+    },
+    "npm": {
+        "publish": false
+    },
+    "plugins": {
+        "@release-it/conventional-changelog": {
+            "preset": {
+                "name": "conventionalcommits",
+                "types": [
+                    {
+                        "type": "feat",
+                        "section": "✨ New Features"
+                    },
+                    {
+                        "type": "fix",
+                        "section": "🐛 Bug Fixes"
+                    },
+                    {
+                        "type": "perf",
+                        "section": "⚡ Performance"
+                    },
+                    {
+                        "type": "refactor",
+                        "section": "♻️ Refactored"
+                    },
+                    {
+                        "type": "docs",
+                        "section": "📚 Documentation"
+                    },
+                    {
+                        "type": "chore",
+                        "hidden": true
+                    },
+                    {
+                        "type": "style",
+                        "hidden": true
+                    },
+                    {
+                        "type": "test",
+                        "hidden": true
+                    },
+                    {
+                        "type": "build",
+                        "hidden": true
+                    },
+                    {
+                        "type": "ci",
+                        "hidden": true
+                    }
+                ]
+            },
+            "infile": "CHANGELOG.md",
+            "header": "# Changelog\n\nAll notable changes to this project will be documented in this file.\n"
+        }
+    }
+}

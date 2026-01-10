@@ -1,0 +1,15 @@
+# EAS Build ignore file
+# Exclude directories that don't affect the app bundle to speed up uploads
+
+# Native directories - allows EAS to use CNG/Prebuild even when local native folders exist
+# See: https://docs.expo.dev/workflow/prebuild/#usage-with-eas-build
+android/
+ios/
+
+# Development files
+.vscode/
+*.log
+
+# Already handled by default, but explicit for clarity
+node_modules/
+.git/
